@@ -1,6 +1,8 @@
 Git DeepDive
 ============
 
+[Example .gitconfig](https://github.com/Laoujin/dotfiles/blob/master/config/git/.common.gitconfig)
+
 Resources
 ---------
 
