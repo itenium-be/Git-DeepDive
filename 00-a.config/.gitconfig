@@ -1,0 +1,11 @@
+# Config
+
+[core]
+    # Windows: ignore filename casing
+    ignoreCase = false
+
+    # Mac OS: revert unicode decomposition of filenames
+    precomposeUnicode = false
+
+    # Quote paths with special characters
+    quotePath = true
