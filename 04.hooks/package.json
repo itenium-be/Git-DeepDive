@@ -1,0 +1,12 @@
+{
+  "name": "git-hooks",
+  "version": "1.0.0",
+  "devDependencies": {
+    "husky": "^8.0.2"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pre-push": "npm test && eslint"
+  }
+}
