@@ -1,0 +1,25 @@
+### Colors
+# https://itenium.be/blog/productivity/powershell-and-git-for-the-colorblind
+
+# Available colors: normal, black, red, green, yellow, blue, magenta, cyan, or white
+# Second optional color param values: bold, dim, ul (underline), blink, and reverse (swap foreground and background)
+
+[color "branch"]
+	current = yellow
+	local = white
+	remote = magenta
+
+[color "status"]
+	header = white
+	changed = magenta bold
+	untracked = magenta bold
+	unmerged = magenta reverse
+	added = yellow
+	branch = white
+
+[color "diff"]
+	meta = blue white
+	# meta = blue reverse # for synology
+	frag = normal bold
+	old = magenta bold
+	new = green bold

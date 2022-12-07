@@ -1,0 +1,69 @@
+[alias]
+	# Diffing
+	df = "!f() { git diff --ignore-all-space -- $1 ':(exclude)*yarn.lock' ':!**package-lock.json'; }; f"
+	df1 = diff HEAD~
+	df2 = diff HEAD~~
+	df3 = diff HEAD~3
+	dfw = diff --word-diff
+	dfc = diff --cached		# Show staged changes
+
+
+	# Logging
+	lg = log -p # Show commits with diff
+	la = !git l --all
+
+
+	# View history graph with abbreviated SHA and description
+	#   Add -10 to view only last 10 commits
+	lbasic = log --color --abbrev-commit
+	ld = !git lbasic --graph --date=iso8601 --pretty=format:'%C(magenta)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd)%C(bold blue)<%an>%Creset'
+	lda = !git lbasic --date=iso8601 --author=$(git config user.name) --pretty=format:'%C(magenta)%h%Creset - %Cgreen(%cd)%Creset - %C(yellow)%d%Creset%s %C(bold blue)<%an>%Creset'
+	l = !git lbasic --graph --date=relative --pretty=format:'%C(magenta)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd)%C(bold blue)<%an>%Creset'
+
+
+	# View history with changed files
+	ll = log --decorate --date=relative --numstat --pretty=format:'%C(magenta)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd)%C(bold blue)<%an>%Creset'
+
+
+	# Need log inspiration?
+	# https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
+	# The docs: https://git-scm.com/docs/pretty-formats
+
+
+
+
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -i -S$1; }; f"
+
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -i --grep=$1; }; f"
+
+
+
+
+
+	# A loop you say?
+	l1 = !git l -1
+	l2 = !git l -2
+	l3 = !git l -3
+	l10 = !git l -10
+	l15 = !git l -15
+	l20 = !git l -20
+	l25 = !git l -25
+
+	la1 = !git l -1 --all
+	la2 = !git l -2 --all
+	# etc 😃
+
+
+
+
+
+[core]
+	## -- Pager used for diffs, logs, ...
+	# Short version:
+	# pager = less -eFiJM~ -j3 --tabs=3
+	# Verbose version:
+	pager = less --LONG-PROMPT --tabs=3 --quit-at-eof --quit-if-one-screen --tilde --jump-target=3 --ignore-case --status-column
+	# Find out more about configuring and using less:
+	# https://itenium.be/blog/productivity/git-core-pager-less-pager

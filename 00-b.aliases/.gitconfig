@@ -1,0 +1,43 @@
+# Create an alias:
+# git config alias.st status
+
+
+[alias]
+	# Must haves
+	st = status # -u: Show all untracked files (instead of just directories)
+	ci = commit
+	br = branch
+	co = checkout
+	cob = checkout -b
+	com = checkout main
+	df = diff
+	cp = cherry-pick
+	adp = add -p
+
+
+
+	# Current aliases
+	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+
+
+
+	# Committing
+	cim = "!f() { git commit -vm\"$1\"; }; f"
+
+	# Commit entire working directory. usage: git ca "commit message"
+	ca = "!f() { git add -A; git commit -vm\"$1\"; }; f"
+
+	# Put changes last commit back into working directory
+	unci = reset --soft HEAD^
+
+	# Add entire working directory to last commit
+	amend = !git add -A && git commit --amend --no-edit
+
+	# Add staged changes to last commit
+	ciamend = commit --amend --no-edit
+
+	# When leaving in a hurry
+	fire = "!git add -A && git ci -m'FIRE FIRE FIRE' --no-verify && git push origin HEAD:fire-branch -f"
+
+	# Find branch
+	fb = "!f() { git branch -a | grep \"$1\"; }; f"

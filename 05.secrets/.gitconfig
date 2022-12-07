@@ -1,0 +1,13 @@
+[alias]
+	# Ignore changes to a file
+	# More details: https://fallengamer.livejournal.com/93321.html
+
+	# Use --skip-worktree when changing secrets in files
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	hidden = "!git ls-files -v | grep ^S | cut -c 3-"
+
+	# Use --assume-unchanged for performance optimalisation for big folders (ex: SDKs)
+	assume = update-index --assume-unchanged
+	noassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"

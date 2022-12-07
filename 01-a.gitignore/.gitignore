@@ -1,0 +1,38 @@
+## Git Ignore
+
+# What to ignore?
+# All generated files (dll, exe, logs, test results, ...)
+# There are exceptions, if unsure, Google is your friend!
+# Example:
+# package-lock.json : Typically checked in for CI
+
+
+# Patterns
+# !     negate
+# ?     any one character
+# []    character class (ex: [a-Z] or [0-9] or [aA])
+# *     any character(s)
+# **    matches all files or zero or more directories
+
+# Example
+# src folder:
+# Ignore generated js files
+src/*.js
+# But do track index.js entrypoint
+!src/index.js
+
+
+
+# Templates: https://github.com/github/gitignore
+# Cheat-Sheet: https://gist.github.com/jstnlvns/ebaa046fae16543cc9efc7f24bcd0e31
+
+
+
+# Once a file is being tracked by git,
+# adding it to gitignore will NOT stop tracking it!
+# git rm --cached <file(s)>
+
+
+
+# There is also .git\info\exclude
+# This is NOT pushed/shared and only works locally

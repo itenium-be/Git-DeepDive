@@ -1,0 +1,27 @@
+[alias]
+	# Stashing
+	stashes = stash list --date=relative
+	sl = stash list
+
+	# Stash with a specific message
+	sn = "!f() { git stash save \"$1\"; }; f"
+
+	# Show stash by number (0 = last stash)
+	ss = "!f() { git show \"stash@{$1}\"; }; f"
+
+	sp = stash pop
+	sa = stash apply
+	sd = "!f() { git stash drop \"stash@{$1}\"; }; f"
+
+	# More
+	# git stash save --keep-index
+	# git stash save --staged
+	# git stash save --patch
+	# git stash clear
+
+
+
+	# Tagging
+	tags = tag -l
+	# Print the last tag
+	tl = describe --tags --abbrev=0

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# Path Juggling
+originalPath=`pwd`
+if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi
+cd ./frontend-project-folder/
+
+# Linting
+npm run lint
+if [ $? -ne 0 ]; then
+    cd $originalPath
+    exit -1
+fi
+
+# Testing
+npm test
+if [ $? -ne 0 ]; then
+  cd $originalPath
+  exit -1
+fi
+
+# Build
+npm run build
+hasBuildErrors=$?
+
+cd $originalPath
+exit $hasBuildErrors

@@ -1,0 +1,58 @@
+# Configure external Diff & Merge tools
+
+[alias]
+	# External tools
+	dt = difftool
+	mt = mergetool
+
+
+[core]
+	# editor = emacs | nano | vim | atom --wait | mate -w
+	editor = code --wait
+	# editor = "\"C:\\Program Files\\Sublime Text 3\\subl.exe\" -n -w"
+	# editor = "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+
+[merge]
+	tool = bc3
+
+[mergetool]
+	prompt = false
+	keepBackup = false
+
+[mergetool "bc3"]
+	path = C:\\Program Files (x86)\\Beyond Compare 3\\bcomp.exe
+	trustExitCode = true
+
+[mergetool "vsc"]
+	cmd = code --wait $MERGED
+
+[difftool "p4"]
+	cmd = p4merge '$BASE $LOCAL $REMOTE $MERGED'
+	trustExitCode = false
+
+[mergetool "webstorm"]
+	cmd = webstorm merge $LOCAL $REMOTE $BASE $MERGED --wait
+	trustExitCode = true
+
+[mergetool "intellij"]
+	cmd = /usr/local/bin/idea merge $(cd $(dirname "$LOCAL") && pwd)/$(basename "$LOCAL") $(cd $(dirname "$REMOTE") && pwd)/$(basename "$REMOTE") $(cd $(dirname "$BASE") && pwd)/$(basename "$BASE") $(cd $(dirname "$MERGED") && pwd)/$(basename "$MERGED")
+	cmd = cmd.exe //c "\"C:/Program Files (x86)/IntelliJ IDEA Community Edition 12.0/bin/idea.bat\" merge \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\""
+	trustExitCode = true
+
+# Others:
+# vimdiff3
+# Visual Studio (Builtin option to configure: https://www.codewrecks.com/post/old/2019/07/how-to-configure-visual-studio-as-diff-and-merge-tool-for-git/)
+
+
+
+
+[diff]
+	tool = vsc
+
+[difftool "bc3"]
+	path = C:\\Program Files (x86)\\Beyond Compare 3\\bcomp.exe
+
+[difftool "vsc"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+	# cmd = \"C:\\Users\\Wouter\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\Code.cmd\" \"$LOCAL\" \"$REMOTE\" --diff --wait
