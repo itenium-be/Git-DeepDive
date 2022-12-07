@@ -1,3 +1,21 @@
-# https://lostechies.com/keithdahlby/2011/04/06/windows-git-tip-hide-carriage-return-in-diff/
-# --> Do not see ^M in git diff :
-# git config --global core.whitespace cr-at-eol
+# Git Attributes
+# Auto detect text files and perform LF normalization
+# Templates: https://github.com/alexkaratarakis/gitattributes
+# Usually not necessary...
+
+
+# Default behavior
+*          text=auto
+
+# Bash scripts must use lf line endings
+*.sh       text   eol=lf
+
+# Windows scripts must use CRLF line endings
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+# Other
+*.cs       text   diff=csharp
+*.cshtml   text   diff=html
+*.scala    text   diff=java
+*.class    binary

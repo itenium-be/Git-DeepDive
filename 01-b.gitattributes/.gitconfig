@@ -1,2 +1,26 @@
 [core]
     attributesfile = ~/.gitattributes_global
+
+    eol = native    # Or: lf / crlf
+
+    # core.autocrlf =  true: Checkout Windows-style (CRLF), commit Unix-style (LF)
+    # core.autocrlf = input: Checkout as-is, commit Unix-style
+    # core.autocrlf = false: Checkout as-is, commit as-is
+    # Setting core.autocrlf to true or input overrides core.eol
+    autocrlf = true
+
+
+    # Whitespace troubles to notice in git diff
+    # https://git-scm.com/docs/git-config#Documentation/git-config.txt-corewhitespace
+    whitespace = blank-at-eol,space-before-tab,-indent-with-non-tab,-tab-in-indent,blank-at-eof
+
+
+
+
+
+    # Seeing pesky ^M at line ends?
+    autocrlf = false
+    # cr-at-eol treats a carriage-return at the end of line as part of the line terminator,
+    # i.e. with it, trailing-space does not trigger if the character before such a carriage-return
+    # is not a whitespace (not enabled by default).
+    whitespace = cr-at-eol
