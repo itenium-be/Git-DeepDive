@@ -1,4 +1,7 @@
-https://gitready.com/advanced/2009/02/05/bash-auto-completion.html
+Bash
+====
 
+Location: `~/.bashrc`
 
-https://gitready.com/advanced/2009/01/23/bash-git-status.html
+- [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt)
+- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
