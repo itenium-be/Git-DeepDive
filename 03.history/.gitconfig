@@ -69,3 +69,33 @@
 	pager = less --LONG-PROMPT --tabs=3 --quit-at-eof --quit-if-one-screen --tilde --jump-target=3 --ignore-case --status-column
 	# Find out more about configuring and using less:
 	# https://itenium.be/blog/productivity/git-core-pager-less-pager
+
+
+[rerere]
+	# Reuse recorded resolution
+	# https://git-scm.com/book/en/v2/Git-Tools-Rerere
+	# https://stackoverflow.com/questions/49500943/what-is-git-rerere-and-how-does-it-work
+	enabled = 1
+	autoupdate = 1
+
+
+
+[blame]
+	# https://git-scm.com/docs/git-blame#Documentation/git-blame.txt-blameblankBoundary
+	coloring = none   # or: repeatedLines, highlightRecent
+	date = iso8601
+	showEmail = false # instead of username
+	ignoreRevsFile =
+
+
+
+[push]
+    # nothing - do not push anything (error out) unless a refspec is given. This is primarily meant for people who want to avoid mistakes by always being explicit.
+    # current - push the current branch to update a branch with the same name on the receiving end. Works in both central and non-central workflows.
+    # upstream - push the current branch back to the branch whose changes are usually integrated into the current branch (which is called @{upstream}). This mode only makes sense if you are pushing to the same repository you would normally pull from (i.e. central workflow).
+    # simple - pushes the current branch with the same name on the remote.
+    # matching - push all branches having the same name on both ends.
+    default = simple # Default since git 2.0
+
+    # Tags are not automatically pushed
+    followTags = true
