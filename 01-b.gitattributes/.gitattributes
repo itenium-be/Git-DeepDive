@@ -1,0 +1,3 @@
+# https://lostechies.com/keithdahlby/2011/04/06/windows-git-tip-hide-carriage-return-in-diff/
+# --> Do not see ^M in git diff :
+# git config --global core.whitespace cr-at-eol
