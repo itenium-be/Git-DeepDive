@@ -1,3 +1,5 @@
+# History
+
 [alias]
 	# Diffing
 	df = "!f() { git diff --ignore-all-space -- $1 ':(exclude)*yarn.lock' ':!**package-lock.json'; }; f"

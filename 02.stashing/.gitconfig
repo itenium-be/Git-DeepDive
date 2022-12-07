@@ -1,5 +1,6 @@
+# Stashing
+
 [alias]
-	# Stashing
 	stashes = stash list --date=relative
 	sl = stash list
 

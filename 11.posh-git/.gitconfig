@@ -1,4 +1,4 @@
-### Colors
+# Colors
 # https://itenium.be/blog/productivity/powershell-and-git-for-the-colorblind
 
 # Available colors: normal, black, red, green, yellow, blue, magenta, cyan, or white
@@ -19,7 +19,6 @@
 
 [color "diff"]
 	meta = blue white
-	# meta = blue reverse # for synology
 	frag = normal bold
 	old = magenta bold
 	new = green bold
