@@ -1,0 +1,5 @@
+# git config --global core.excludesfile ~/.gitignore_global
+# ~ is %USERPROFILE% on Windows
+
+[core]
+	excludesfile = ~/.gitignore_global
