@@ -1,13 +1,18 @@
 [alias]
 	# Ignore changes to a file
+	# Example .env, config.json, ...
 	# More details: https://fallengamer.livejournal.com/93321.html
 
 	# Use --skip-worktree when changing secrets in files
 	hide = update-index --skip-worktree
 	unhide = update-index --no-skip-worktree
 	hidden = "!git ls-files -v | grep ^S | cut -c 3-"
+	hideall = "!git status -s | awk {'print $2'} | xargs git hide"
+	unhideall = "!git hidden | xargs git update-index --no-skip-worktree"
 
 	# Use --assume-unchanged for performance optimalisation for big folders (ex: SDKs)
 	assume = update-index --assume-unchanged
-	noassume = update-index --no-assume-unchanged
+	unassume = update-index --no-assume-unchanged
 	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	assumeall = "!git status -s | awk {'print $2'} | xargs git assume"
+	unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
