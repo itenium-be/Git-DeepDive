@@ -1,7 +1,16 @@
 Git DeepDive
 ============
 
-[Example .gitconfig](https://github.com/Laoujin/dotfiles/blob/master/config/git/.common.gitconfig)
+Previous session:
+
+- [git-how-to-get-out-of-a-mess](https://github.com/itenium-be/git-how-to-get-out-of-a-mess)
+
+
+Example `.gitconfig`s:
+
+- [mine](https://github.com/Laoujin/dotfiles/blob/master/config/git/.common.gitconfig)
+- [pksunkara](https://gist.github.com/pksunkara/988716)
+
 
 Resources
 ---------
